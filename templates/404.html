@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block nav_links %}
+  <a class="nav-link" href="{{ url_for('kayak_info') }}">Status</a>
+  <a class="nav-link" href="{{ url_for('maps') }}">Maps</a>
+  <a class="nav-link" href="{{ url_for('about') }}">About</a>
+{% endblock %}
+{% block main %}
+  <h1 class="cover-heading">You're up a creek without a paddle.</h1>
+  <br />
+  <p class="lead"><a href="{{ url_for('kayak_info') }}">Try Again</a></p>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block nav_links %}
+  <a class="nav-link" href="{{ url_for('kayak_info') }}">Status</a>
+  <a class="nav-link active" href="{{ url_for('maps') }}">Maps</a>
+  <a class="nav-link" href="{{ url_for('about') }}">About</a>
+{% endblock %}
+{% block main %}
+  <h1 class="cover-heading">Harpeth River Access Maps</h1>
+  <br />
+  <p class="lead"><a href="{{ url_for('harpeth_state_park') }}" target="_blank">Harpeth River State Park</a></p>
+  <p class="lead"><a href="{{ url_for('harpeth_franklin') }}" target="_blank">Harpeth River at Franklin</a></p>
+{% endblock %}
