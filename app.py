@@ -31,7 +31,6 @@ def kayak_info(site_id=SITE):
         'discharge_info': discharge_info,
         'gage': gage,
         'gage_info': gage_info,
-        'test': 'test123'
     }
     return render_template('base.html', **data)
 
@@ -68,25 +67,25 @@ def get_discharge_info(discharge):
 def get_gage_info(gage):
     result = None
     if gage < 1.5:
-        result ='\nIt\'s bone dry and not possible to kayak.'
-    if 1.5 < gage < 2.0:
-        result = '\nYou\'ll probaby have to portage some.'
-    if 2.0 < gage < 2.5:
-        result = '\nIt\'s a little lower than average.'
-    if 2.5 < gage < 3.0:
-        result = '\nThe water level is right around the average.'
-    if 3.0 < gage < 3.5:
-        result = '\nThe water level is great, you should be fine.'
+        result ='It\'s bone dry and not possible to kayak.'
+    if 1.5 < gage < 1.9:
+        result = 'You\'ll probaby have to portage some.'
+    if 1.9 < gage < 2.3:
+        result = 'The water level is a little lower than average.'
+    if 2.3 < gage < 2.8:
+        result = 'The water level is right around the average.'
+    if 2.8 < gage < 3.5:
+        result = 'The water level is great, you should be fine.'
     if 3.5 < gage < 4.0:
-        result = '\nThe water level is a little high.'
+        result = 'The water level is a little high.'
     if 4.0 < gage < 4.5:
-        result = '\nBe careful, the water is higher than normal.'
+        result = 'Be careful, the water is higher than normal.'
     if 4.5 < gage < 5.0:
-        result = '\nWater is very high. Might be risky.'
+        result = 'Water is very high. Might be risky.'
     if 5.0 < gage < 6.0:
-        result = '\nProbably not a good idea to kayak today.'
+        result = 'Probably not a good idea to kayak today.'
     if gage > 6.0:
-        result = '\nThe water is too damn high!'
+        result = 'The water is too damn high!'
     return result
 
 @app.route('/about')
